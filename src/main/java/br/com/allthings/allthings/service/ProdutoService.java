@@ -22,4 +22,12 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
+    public void deleteById(Integer Id){
+        produtoRepository.deleteById(Id);
+    }
+
+    public Produto findById(Integer id){
+        return produtoRepository.findById(id).orElse(null);
+    }
+
 }

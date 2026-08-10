@@ -11,46 +11,45 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.allthings.allthings.entity.Produto;
-import br.com.allthings.allthings.service.ProdutoService;
+import br.com.allthings.allthings.entity.Cliente;
+import br.com.allthings.allthings.service.ClienteService;
 
 @Controller
-@RequestMapping("/produtos")
-public class ProdutoController {
+@RequestMapping("/clientes")
+public class ClienteController {
+    
+    @Autowired
+    private ClienteService clienteService;
 
-   @Autowired
-    private ProdutoService produtoService;
-
-    //Método para salvar um produto
     @PostMapping("/salvar")
-    public String salvar(@ModelAttribute Produto produto){
-        produtoService.save(produto);
-        return "redirect:/produtos/listar";
+    public String salvar(@ModelAttribute Cliente cliente){
+        clienteService.save(cliente);
+        return "redirect:/clientes/listar";
     }
 
     @GetMapping("/listar")
     public String listar(Model model){
-        List<Produto> produtos = produtoService.findAll();
-        model.addAttribute("produtos", produtos);
-        return "produto/listaProduto";
+        List<Cliente> clientes = clienteService.findAll();
+        model.addAttribute("clientes", clientes);
+        return "cliente/listaCliente";
     }
 
     @GetMapping("/criar")
     public String criarForm(Model model){
-        model.addAttribute("produto", new Produto());
-        return "produto/formularioProduto";
+        model.addAttribute("cliente", new Cliente());
+        return "cliente/formularioCliente";
     }
 
     @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable Integer id){
-        produtoService.deleteById(id);
-        return "redirect:/produtos/listar";
+        clienteService.deleteById(id);
+        return "redirect:/clientes/listar";
     }
 
     @GetMapping("/editar/{id}")
     public String editarForm(@PathVariable Integer id, Model model){
-        Produto produto = produtoService.findById(id);
-        model.addAttribute("produto", produto);
-        return "produto/formularioProduto";
+        Cliente cliente = clienteService.findById(id);
+        model.addAttribute("cliente", cliente);
+        return "cliente/formularioCliente";
     }
 }

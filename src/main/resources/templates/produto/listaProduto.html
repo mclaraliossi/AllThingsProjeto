@@ -9,9 +9,9 @@
     <h1>Lista de Produtos</h1>
     <h3><a href="/produtos/criar">Novo Produto</a></h3>
 
-    <table>
+    <table border="1">
         <thead>
-            <td>Lista de Produtos</td>
+            <td colspan="6">Lista de Produtos</td>
         </thead>
         <tbody>
             <th>Descrição</th>
@@ -22,7 +22,7 @@
             <th>Ações</th>
         </tbody>
         <tr th:each="produto :${produtos}">
-            <td th:text="${produto.descriçãoProduto}"></td>
+            <td th:text="${produto.descricaoProduto}"></td>
             <td th:text="${produto.marcaProduto}"></td>
             <td th:text="${produto.modeloProduto}"></td>
             <td th:text="${produto.unidadeProduto}"></td>

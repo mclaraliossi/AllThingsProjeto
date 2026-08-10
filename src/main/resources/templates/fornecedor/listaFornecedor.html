@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <h3><a href="/fornecedores/criar">Novo Fornecedor</a></h3>
+
+    <table border="1">
+        <thead>
+            <td colspan="6">Lista de Fornecedores</td>
+        </thead>
+        <tbody>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>CEP</th>
+            <th>CNPJ</th>
+            <th>Ações</th>
+        </tbody>
+        <tr th:each="fornecedor :${fornecedores}">
+            <td th:text="${fornecedor.nomeFornecedor}"></td>
+            <td th:text="${fornecedor.enderecoFornecedor}"></td>
+            <td th:text="${fornecedor.cidadeFornecedor}"></td>
+            <td th:text="${fornecedor.estadoFornecedor}"></td>
+            <td th:text="${fornecedor.cepFornecedor}"></td>
+            <td th:text="${fornecedor.cnpjFornecedor}"></td>
+            <td>
+                <a th:href="@{/fornecedores/editar/{id}(id=${fornecedor.idFornecedor})}">Editar</a>
+                <a th:href="@{/fornecedores/excluir/{id}(id=${fornecedor.idFornecedor})}">Excluir</a>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
