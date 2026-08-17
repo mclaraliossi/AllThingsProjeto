@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
+    <h1>Formulário de cadastro de Fornecedor</h1>
     <form th:action="@{/fornecedores/salvar}" method="post" th:object="${fornecedor}">
 
         <input type="hidden" name="idFornecedor" th:field="*{idFornecedor}">

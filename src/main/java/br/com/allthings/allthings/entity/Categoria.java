@@ -1,5 +1,7 @@
 package br.com.allthings.allthings.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,31 +17,17 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Fornecedor {
+public class Categoria {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idFornecedor;
+    private Integer idCategoria;
 
     @Column(nullable = false, length = 40)
-    private String nomeFornecedor;
+    private String nomeCategoria;
 
-    @Column(nullable = false, length = 40)
-    private String enderecoFornecedor;
+    @Column(nullable = false, length = 100)
+    private String descricaoCategoria;
 
-    @Column(nullable = false, length = 30)
-    private String cidadeFornecedor;
 
-    @Column(nullable = false, length = 2)
-    private String estadoFornecedor;
-
-    @Column(nullable = false, length = 8)
-    private String cepFornecedor;
-
-    @Column(nullable = false, length = 14)
-    private String cnpjFornecedor;
-
-    
-
-    
 }

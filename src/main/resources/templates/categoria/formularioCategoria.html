@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Categorias</title>
+</head>
+<body>
+    <h1></h1>
+    <form th:action="@{/categorias/salvar}" method="post" th:object="${categoria}">
+
+        <input type="hidden" name="idCategoria" th:field="*{idCategoria}">
+
+        <label for="nomeCategoria">Nome</label>
+        <input type="text" id="nomeCategoria" name="nomeCategoria" th:field="*{nomeCategoria}">
+        <br>
+
+        <label for="descricaoCategoria">Endereço</label>
+        <input type="text" id="descricaoCategoria" name="descricaoCategoria" th:field="*{descricaoCategoria}">
+        <br>
+
+        <button type="submit">Salvar o categoria</button>
+    </form>
+
+    <p><a th:href="@{/categorias/listar}" >Voltar</a></p>
+</body>
+</html>

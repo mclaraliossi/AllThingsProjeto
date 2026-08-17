@@ -11,47 +11,47 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.allthings.allthings.entity.Fornecedor;
-import br.com.allthings.allthings.service.FornecedorService;
+import br.com.allthings.allthings.entity.Categoria;
+import br.com.allthings.allthings.service.CategoriaService;
 
 
 @Controller
-@RequestMapping("/fornecedores")
-public class FornecedorController {
+@RequestMapping("/categorias")
+public class CategoriaController {
     
+
     @Autowired
-    private FornecedorService fornecedorService;
+    private CategoriaService categoriaService;
 
     @PostMapping("/salvar")
-    public String salvar(@ModelAttribute Fornecedor fornecedor){
-        fornecedorService.save(fornecedor);
-        return "redirect:/fornecedores/listar";
+    public String salvar(@ModelAttribute Categoria categoria){
+        categoriaService.save(categoria);
+        return "redirect:/categorias/listar";
     }
 
     @GetMapping("/listar")
     public String listar(Model model){
-        List<Fornecedor> fornecedores = fornecedorService.findAll();
-        model.addAttribute("fornecedores", fornecedores);
-        return "fornecedor/listaFornecedor";
+        List<Categoria> categorias = categoriaService.findAll();
+        model.addAttribute("categorias", categorias);
+        return "categoria/listaCategoria";
     }
 
     @GetMapping("/criar")
     public String criarForm(Model model){
-        model.addAttribute("fornecedor", new Fornecedor());
-        return "fornecedor/formularioFornecedor";
+        model.addAttribute("categoria", new Categoria());
+        return "categoria/formularioCategoria";
     }
 
     @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable Integer id){
-        fornecedorService.deleteById(id);
-        return "redirect:/fornecedores/listar";
+        categoriaService.deleteById(id);
+        return "redirect:/categorias/listar";
     }
 
     @GetMapping("/editar/{id}")
     public String editarForm(@PathVariable Integer id, Model model){
-        Fornecedor fornecedor = fornecedorService.findById(id);
-        model.addAttribute("fornecedor", fornecedor);
-        return "fornecedor/formularioFornecedor";
+        Categoria categoria = categoriaService.findById(id);
+        model.addAttribute("categoria", categoria);
+        return "categoria/formularioCategoria";
     }
-
 }

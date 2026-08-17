@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
+    <h1>Formulário de cadastro de Produto</h1>
     <form th:action="@{/produtos/salvar}" method="post" th:object="${produto}">
 
         <input type="hidden" name="idProduto" th:field="*{idProduto}">
@@ -25,6 +25,14 @@
 
         <label for="valorProduto">Valor</label>
         <input type="text" id="valorProduto" name="valorProduto" th:field="*{valorProduto}">
+
+        <label for="idFornecedor">Fornecedor</label>
+        <select th:field="*{fornecedor}">
+            <option value="" disabled selected>Selecione o Fornecedor</option>
+            <option th:each="fornecedor : ${fornecedores}"
+                    th:text="${fornecedor.nomeFornecedor}"
+                    th:value="${fornecedor.idFornecedor}"></option>
+        </select>
 
         <button type="submit">Salvar o Produto</button>
     </form>
