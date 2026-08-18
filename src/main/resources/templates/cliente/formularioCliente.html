@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
     <h1>Formulário de cadastro de Cliente</h1>
@@ -32,12 +33,12 @@
         <label for="rgCliente">CNPJ</label>
         <input type="text" id="rgCliente" name="rgCliente" th:field="*{rgCliente}">
 
-        <button type="submit">Salvar o Fornecedor</button>
+        <button class="btnSalvar" type="submit">Salvar o Fornecedor</button>
 
         
     </form>
 
-    <p><a th:href="@{/clientes/listar}">Voltar</a></p>
+    <p><a class="btnVoltar" th:href="@{/clientes/listar}">Voltar</a></p>
 </body>
 </html>
 

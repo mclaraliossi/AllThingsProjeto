@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario <!DOCTYPE html>
+    <link rel="stylesheet" href="/css/form.css">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,13 +21,13 @@
         <input type="text" id="nomeCategoria" name="nomeCategoria" th:field="*{nomeCategoria}">
         <br>
 
-        <label for="descricaoCategoria">Endereço</label>
+        <label for="descricaoCategoria">Descrição</label>
         <input type="text" id="descricaoCategoria" name="descricaoCategoria" th:field="*{descricaoCategoria}">
         <br>
 
-        <button type="submit">Salvar o categoria</button>
+        <button class="btnSalvar" type="submit">Salvar o categoria</button>
     </form>
 
-    <p><a th:href="@{/categorias/listar}" >Voltar</a></p>
+    <p><a class="btnVoltar" th:href="@{/categorias/listar}" >Voltar</a></p>
 </body>
 </html>

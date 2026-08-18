@@ -28,7 +28,8 @@ public class ProdutoController {
     @Autowired
     private FornecedorService fornecedorService;
 
-    @Autowired CategoriaService categoriaService;
+    @Autowired 
+    private CategoriaService categoriaService;
 
     //Método para salvar um produto
     @PostMapping("/salvar")

@@ -1,16 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto All Things</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <h1>Sistema All Things</h1>
-    <h3><a href="/produtos/listar"> Gerenciar Produtos</a></h3>
-    <h3><a href="/clientes/listar"> Gerenciar Clientes</a></h3>
-    <h3><a href="/fornecedores/listar"> Gerenciar Fornecedores</a></h3>
-  
-    
+<body id="bodyIndex">
+
+    <nav class="nav">
+        <div class="brand"><span class="brand-mark"></span> ALL THINGS</div>
+    </nav>
+
+    <header class="hero">
+        <span class="eyebrow">Painel de Gestão</span>
+        <h1 class="titulo">Tudo o que seu negócio<br>precisa em <em>um só lugar</em></h1>
+        <p class="subtitulo">Acompanhe e gerencie produtos, clientes, fornecedores e categorias com uma central única e organizada.</p>
+    </header>
+
+    <ul class="grid">
+        <li>
+            <a class="card" href="/produtos/listar">
+                <span class="card-arrow">&#8599;</span>
+                <span class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+                </span>
+                <h3 class="card-title">Produtos</h3>
+                <p class="card-desc">Cadastre, edite e organize o catálogo de produtos.</p>
+            </a>
+        </li>
+        <li>
+            <a class="card" href="/clientes/listar">
+                <span class="card-arrow">&#8599;</span>
+                <span class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+                </span>
+                <h3 class="card-title">Clientes</h3>
+                <p class="card-desc">Visualize e gerencie a base de clientes cadastrados.</p>
+            </a>
+        </li>
+        <li>
+            <a class="card" href="/fornecedores/listar">
+                <span class="card-arrow">&#8599;</span>
+                <span class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+                </span>
+                <h3 class="card-title">Fornecedores</h3>
+                <p class="card-desc">Controle os parceiros que abastecem seu estoque.</p>
+            </a>
+        </li>
+        <li>
+            <a class="card" href="/categorias/listar">
+                <span class="card-arrow">&#8599;</span>
+                <span class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                </span>
+                <h3 class="card-title">Categorias</h3>
+                <p class="card-desc">Organize os produtos por categorias e subgrupos.</p>
+            </a>
+        </li>
+    </ul>
+
 </body>
 </html>

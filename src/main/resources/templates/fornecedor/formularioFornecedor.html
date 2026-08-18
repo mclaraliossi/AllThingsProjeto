@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
     <h1>Formulário de cadastro de Fornecedor</h1>
@@ -29,10 +30,10 @@
         <label for="cnpjFornecedor">CNPJ</label>
         <input type="text" id="cnpjFornecedor" name="cnpjFornecedor" th:field="*{cnpjFornecedor}">
 
-        <button type="submit">Salvar o Fornecedor</button>
+        <button class="btnSalvar" type="submit">Salvar o Fornecedor</button>
 
     </form>
 
-    <p><a th:href="@{/fornecedores/listar}">Voltar</a></p>
+    <p><a class="btnVoltar" th:href="@{/fornecedores/listar}">Voltar</a></p>
 </body>
 </html>

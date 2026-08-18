@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/lista.css">
 </head>
 <body>
-    <h1>Lista de Produtos</h1>
-    <h3><a href="/produtos/criar">Novo Produto</a></h3>
+    <h1 class="titulo">Lista de Produtos</h1>
+    <h3 class="textListaPrimario"><a href="/produtos/criar">Novo Produto</a></h3>
 
-    <table border="1">
+    <table class="tabela" border="1">
         <thead>
             <td colspan="8">Lista de Produtos</td>
         </thead>
@@ -36,6 +37,6 @@
         </tr>
 
     </table>
-    <p><a th:href="@{/allthings}">Voltar</a></p>
+    <p><a class="btnVoltar" th:href="@{/allthings}">Voltar</a></p>
 </body>
 </html>
