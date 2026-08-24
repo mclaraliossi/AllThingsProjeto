@@ -27,13 +27,18 @@
         <label for="cepCliente">CEP</label>
         <input type="text" id="cepCliente" name="cepCliente" th:field="*{cepCliente}">
 
-        <label for="cpfCliente">CNPJ</label>
+        <label for="cpfCliente">CPF</label>
         <input type="text" id="cpfCliente" name="cpfCliente" th:field="*{cpfCliente}">
 
-        <label for="rgCliente">CNPJ</label>
+        <label for="rgCliente">RG</label>
         <input type="text" id="rgCliente" name="rgCliente" th:field="*{rgCliente}">
 
-        <button class="btnSalvar" type="submit">Salvar o Fornecedor</button>
+        <label for="fotoCliente">Foto:</label>
+        <input type="file" name="foto" accept="image/*" id="fotoCliente"/>
+
+        Tamanho máximo: 5Mb
+
+        <button class="btnSalvar" type="submit">Salvar o Cliente</button>
 
         
     </form>

@@ -12,7 +12,7 @@
 
     <table class="tabela" border="1">
         <thead>
-            <td colspan="6">Lista de Clientes</td>
+            <td colspan="7">Lista de Clientes</td>
         </thead>
         <tbody>
             <th>Nome</th>
@@ -22,7 +22,11 @@
             <th>CEP</th>
             <th>CPF</th>
             <th>RG</th>
-            <th>Ações</th>
+            <th>Foto</th>
+
+            <th colspan="2">
+            Ações
+            </th>
         </tbody>
         <tr th:each="cliente :${clientes}">
             <td th:text="${cliente.nomeCliente}"></td>
@@ -32,6 +36,11 @@
             <td th:text="${cliente.cepCliente}"></td>
             <td th:text="${cliente.cpfCliente}"></td>
             <td th:text="${cliente.rgCliente}"></td>
+            <td>
+                <img th:if="${cliente.fotoCliente != null}"
+                    th:src="@{/clientes/foto/{id}(id=${cliente.idCliente})}"
+                    width="70" height="80">
+            </td>
             <td>
                 <a th:href="@{/clientes/editar/{id}(id=${cliente.idCliente})}">Editar</a>
                 <a th:href="@{/clientes/excluir/{id}(id=${cliente.idCliente})}">Excluir</a>

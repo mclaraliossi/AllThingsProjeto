@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,6 +42,12 @@ public class Cliente {
 
     @Column(nullable = false, length = 9)
     private String rgCliente;
+
+    @Lob
+    private byte[] fotoCliente;
+
+    @Column(length = 50)
+    private String tipoFotoCliente;
 
 
 
