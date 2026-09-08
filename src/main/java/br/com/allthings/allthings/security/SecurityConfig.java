@@ -19,7 +19,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth //fala quais são as páginas ou rotas que podem ser acessadas sem estar logada na página
                         .requestMatchers(
                         "/login", 
-                        "/petweb", 
+                        "/allthings", 
                         "/css/**",
                         "/js/**", 
                         "/images/**", 
